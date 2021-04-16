@@ -1,0 +1,27 @@
+body{
+    background-color: whitesmoke;
+    text-align: center;
+}
+p{
+    background-color:lightskyblue;
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1{
+    background-color: rgb(30, 111, 233);
+    color: white;
+    text-shadow: black;
+    text-align: center;
+}
+h2{
+    background-color:burlywood;
+    color: white;
+    text-align: center;
+}
+.id{
+    background-color:whitesmoke;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    font-style: oblique;
+}

@@ -1,21 +1,37 @@
-//Configuracion de sequelize
+// Esta código incluye la confuguración de la base de datos.
+
+// Configuración de biblioteca sequalize para hacer consultas en la compu windows base de datos específica.
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('aplicacion','sa','Password1234$',{
-    dialect: 'mssql',
-    dialectOptions:{
-        options:{
+const sequelize = new Sequelize('ProyectoMarte', 'sa', 'Password1234$', 
+{
+    host: '192.168.0.120', // Ip de mi compu en la red.
+    dialect: 'mssql', 
+    dialectOptions: {
+        options: {
             useUTC: false,
             dateFirst: 1
         }
-    },
-    define:{
-        //Evitar que nos ponga createdAT y updatedAt
-        timestamps: false,
-        //Evitar que agregue una s al final
+    }, 
+    define: {
+        timestamps: false, 
         freezeTableName: true
     }
 });
-//Exportando el objeto sequelize
+
+// Cargar las referencias de los modelos
+// Arreglo con las funciones que crean las tablas.
+const modelDefiners = [
+    require('../models/jugador'), 
+];
+
+// Usamos la configuración de sequelize para pasarlo a las funciones que definen cada tabla.
+for (const modelDefiner of modelDefiners) {
+    modelDefiner(sequelize);
+};
+
+// Incluir relaciones entre tablas.
+//const {applyRelations} = require('./relaciones');
+
+//applyRelations(sequelize);
+
 module.exports = sequelize;
-
-
