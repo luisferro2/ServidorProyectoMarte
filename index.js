@@ -15,6 +15,7 @@ const sequelize = require('./util/database');
 
 // Importar las rutas relacionadas con la tabla Jugador.
 const jugadorRoutes = require('./routes/jugador');
+const nivelRoutes = require('./routes/nivel');
 
 // Importar biblioteca para manejar rutas de archivos.
 const path = require('path');
@@ -30,6 +31,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 // middleware para que se use /usuario como ruta principal para los metodos de alumnoRoutes.
 app.use('/jugador', jugadorRoutes);
+app.use('/nivel', nivelRoutes);
 
 // Middleware permite que el folder public sea público. 
 app.use(express.static(path.join(__dirname, 'public')));
