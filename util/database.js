@@ -4,7 +4,7 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('ProyectoMarte', 'sa', 'Password1234$', 
 {
-    host: '192.168.0.120', // Ip de mi compu en la red.
+    host: 'localhost', // Ip de mi compu en la red.
     dialect: 'mssql', 
     dialectOptions: {
         options: {
