@@ -1,5 +1,6 @@
 // Archivo que contiene el diseño de la tabla Juega de la base de datos.
 
+// Importo el módulo sequelize.
 const Sequelize = require('sequelize');
 
 // Función anónima que recibe el objeto de conexión a la base de datos y crea la tabla.
