@@ -37,8 +37,8 @@ for (const modelDefiner of modelDefiners) {
 };
 
 // Incluir relaciones entre tablas.
-//const {applyRelations} = require('./relaciones');
+const {applyRelations} = require('./relations');
 
-//applyRelations(sequelize);
+applyRelations(sequelize);
 
 module.exports = sequelize;
