@@ -6,17 +6,29 @@ const Jugador = (sequelize) => {
     sequelize.define('Jugador', {
         gamertag: {
             type: Sequelize.STRING,
-            allowNull: false,
+            allowNull: false,       //Es necesario para reconocer al jugador
             primaryKey: true
         },
-        contrasena: Sequelize.STRING,
+        contrasena: {
+            type: Sequelize.STRING,
+            allowNull: false        //Es necesario para iniciar sesión
+        },
         tiempoTotal: {
             type: Sequelize.INTEGER,
             defaultValue: 0
         },
-        genero: Sequelize.STRING,
-        fechaNacimiento: Sequelize.DATE,
-        estado: Sequelize.STRING
+        genero: {
+            type: Sequelize.STRING,
+            allowNull: false        //Debe registrarse
+        },
+        fechaNacimiento: {
+            type: Sequelize.DATE,
+            allowNull: false        //Debe registrarse
+        },
+        estado: {
+            type: Sequelize.STRING,
+            allowNull: false        //Debe registrarse
+        }
     });
 };
 module.exports = Jugador;

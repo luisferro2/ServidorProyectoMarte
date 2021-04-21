@@ -7,10 +7,6 @@ const Nivel = (sequelize) => {
             allowNull: false,
             primaryKey: true
         },
-        idVocacion: {
-            type: Sequelize.INTEGER,
-            allowNull: false,
-        },
         nombre: {
             type: Sequelize.STRING,
             allowNull: false

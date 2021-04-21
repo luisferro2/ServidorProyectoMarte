@@ -7,6 +7,11 @@ const Sequelize = require('sequelize');
 const Juega = (sequelize) => {
     sequelize.define('Juega', {
         // Las llaves primarias (foráneas) hacia las tablas relacionadas se agregan en la relación.
+        idJuega: {
+            type: Sequelize.INTEGER,
+            primaryKey = true,
+            allowNull: false
+        },
         tiempoInicio: {
             type: Sequelize.DATE,
             allowNull: false // Se debe llenar al iniciar el juego.
@@ -20,8 +25,10 @@ const Juega = (sequelize) => {
             allowNull: false
         },
         puntuacion: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.FLOAT,
             allowNull: false
         }
     });
 };
+
+module.exports = Juega;
