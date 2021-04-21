@@ -19,6 +19,9 @@ const respuestaRoutes = require('./routes/respuesta');
 const nivelRoutes = require('./routes/nivel');
 const preguntaRoutes = require('./routes/pregunta');
 const juegaRoutes = require('./routes/juega');
+const opcionRoutes = require('./routes/opcion');
+const percepcionRoutes = require('./routes/percepcion');
+const vocacionRoutes = require('./routes/vocacion');
 
 
 // Importar biblioteca para manejar rutas de archivos.
@@ -39,6 +42,9 @@ app.use('/respuesta', respuestaRoutes);
 app.use('/nivel', nivelRoutes);
 app.use('/pregunta', preguntaRoutes);
 app.use('/juega', juegaRoutes);
+app.use('/opcion', opcionRoutes);
+app.use('/percepcion', percepcionRoutes);
+app.use('/vocacion', vocacionRoutes);
 
 // Middleware permite que el folder public sea público. 
 app.use(express.static(path.join(__dirname, 'public')));

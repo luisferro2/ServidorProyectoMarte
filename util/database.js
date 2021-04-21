@@ -28,7 +28,7 @@ const modelDefiners = [
     require('../models/respuesta'),
     require('../models/vocacion'),
     require('../models/percepcion'),
-    require('../models/opcion') 
+    require('../models/opcion'),
 ];
 
 // Usamos la configuración de sequelize para pasarlo a las funciones que definen cada tabla.
