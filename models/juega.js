@@ -9,7 +9,7 @@ const Juega = (sequelize) => {
         // Las llaves primarias (foráneas) hacia las tablas relacionadas se agregan en la relación.
         idJuega: {
             type: Sequelize.INTEGER,
-            primaryKey = true,
+            primaryKey: true,
             allowNull: false
         },
         tiempoInicio: {

@@ -27,7 +27,7 @@ exports.postInsertarRespuesta = (req, res) => {
     res.redirect('/respuesta/confirmacion');
 };
 
-exports.getSelectPreguntas = (req,res)=>{
+exports.getSelectRespuesta = (req,res)=>{
     //select * from respuesta where idNivel = ..
     console.log(req.query)
     Respuesta.findAll()

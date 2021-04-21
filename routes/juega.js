@@ -3,7 +3,7 @@
 const router = require('express').Router();
 const juegaController = require('../controllers/juega');
 
-router.get('/confirmacion', jugadorController.getConfirmacion);
+router.get('/confirmacion', juegaController.getConfirmacion);
 
 router.get('/verJuega', juegaController.getSelectJuega);
 

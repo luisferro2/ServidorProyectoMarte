@@ -21,7 +21,14 @@ const sequelize = new Sequelize('ProyectoMarte', 'sa', 'Password1234$',
 // Cargar las referencias de los modelos
 // Arreglo con las funciones que crean las tablas.
 const modelDefiners = [
-    require('../models/jugador'), 
+    require('../models/jugador'),
+    require('../models/juega'),
+    require('../models/nivel'),
+    require('../models/pregunta'),
+    require('../models/respuesta'),
+    require('../models/vocacion'),
+    require('../models/percepcion'),
+    require('../models/opcion') 
 ];
 
 // Usamos la configuración de sequelize para pasarlo a las funciones que definen cada tabla.

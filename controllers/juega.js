@@ -12,7 +12,7 @@ exports.getConfirmacion = (req, res) => {
 };
 
 // Get para poder visualizar los datos sobre la tabla Juega.
-exports.getSelectJuega() = (req, res) => {
+exports.getSelectJuega = (req, res) => {
     // SELECT * FROM Juega
     Juega.findAll()
         .then(registros => {

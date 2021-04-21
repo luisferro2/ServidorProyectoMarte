@@ -1,7 +1,7 @@
 const path = require('path');
 const Nivel = require('../util/database').models.Nivel;
 
-exports.postInsertarNivel = (req, res)=>{
+/*exports.postInsertarNivel = (req, res)=>{
     console.log(req.body);
     Nivel.create(req.body)
         .then(resultado=>{
@@ -13,7 +13,7 @@ exports.postInsertarNivel = (req, res)=>{
             res.send("Hubo un error al insertar el Nivel");
             console.log("Hubo un error al insertar el Nivel");
         })
-};
+};*/
 
 exports.getVerNivel = (req, res)=>{
     console.log(req.body);
