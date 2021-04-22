@@ -5,7 +5,7 @@ const Sequelize = require('sequelize');
 const Pregunta = (sequelize) => {
     sequelize.define('Pregunta', {
         texto: Sequelize.STRING,
-        opcion_correcta: Sequelize.CHAR
+        opcion_correcta: Sequelize.STRING(1)
     });
 };
 

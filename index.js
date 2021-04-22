@@ -53,7 +53,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
-sequelize.sync({force:true})
+//{force:true}
+sequelize.sync()
     .then(resultado => {
         console.log("Conexión exitosa de sequelize.")
         // Atender peticiones en el puerto 8080.

@@ -5,6 +5,8 @@ const opcionController = require('../controllers/opcion');
 
 router.get('/verOpcion', opcionController.getSelectOpcion);
 
+router.get('/verOpcionPregunta', opcionController.getSelectOpcionPregunta);
+
 router.get('/insertarOpcion', opcionController.postInsertarOpcion);
 
 module.exports = router;

@@ -7,6 +7,8 @@ router.post('/insertarPregunta', preguntaController.postInsertarPregunta);
 
 router.post('/confirmacion', preguntaController.getConfirmacion);
 
+router.get('/verPreguntasDato', preguntaController.getSelectPreguntasDato);
+
 router.get('/verPreguntas', preguntaController.getSelectPreguntas);
 
 router.post('/eliminarPregunta', preguntaController.postEliminarPregunta);

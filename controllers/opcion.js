@@ -18,6 +18,24 @@ exports.getSelectOpcion = (req,res)=>{
         })
 };
 
+exports.getSelectOpcionPregunta = (req,res)=>{
+    //select * from Opcion where IdPregunta = ..
+    console.log(req.query)
+    Opcion.findAll({
+        where:{
+            PreguntumId:req.query.PreguntumId
+        },
+        attributes: ['texto']
+        })
+        .then(result=>{
+            res.send(result);
+        })
+        .catch(error=>{
+            console.log(error)
+            res.send(error);
+        })
+};
+
 exports.postInsertarOpcion = (req, res) => {
     console.log(req.body);
     Pregunta.create({

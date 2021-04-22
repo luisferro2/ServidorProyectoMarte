@@ -38,6 +38,19 @@ exports.getSelectPreguntas = (req,res)=>{
         })
 };
 
+exports.getSelectPreguntasDato = (req,res)=>{
+    //select * from pregunta where idNivel = ..
+    console.log(req.query.dato)
+    Pregunta.findAll({attributes: [req.query.dato]})
+        .then(result=>{
+            res.send(result);
+        })
+        .catch(error=>{
+            console.log(error)
+            res.send(error);
+        })
+};
+
 exports.postEliminarPregunta = (req, res)=>{
     //delete from pregunta where id=..
     console.log(req.body);
