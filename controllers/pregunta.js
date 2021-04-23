@@ -42,9 +42,9 @@ exports.getSelectPreguntasDato = (req,res)=>{
     //select * from pregunta where idNivel = ..
     console.log(req.query.dato)
     Pregunta.findAll({
-        where:{
-            NivelIdNivel:req.query.NivelIdNivel
-        },
+        //where:{
+        //    NivelIdNivel:req.query.NivelIdNivel
+        //},
         attributes: [req.query.dato]
         })
         .then(result=>{
