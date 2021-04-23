@@ -17,6 +17,7 @@ router.get('/registro', jugadorController.getMostrarFormulario);
 
 router.post('/LogIn', jugadorController.getLogIn);
 
+router.post('/LogOut', jugadorController.postLogOut);
 
 
 module.exports = router;

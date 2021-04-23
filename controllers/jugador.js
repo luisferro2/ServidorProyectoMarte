@@ -100,3 +100,27 @@ exports.getLogIn = (req, res)=>{
         res.send("Log in fallido, inténtelo de nuevo");
     })
 };
+
+exports.postLogOut = (req,res)=>{
+    console.log(req.body);
+    Jugador.findAll({
+        where: {
+            gamertag:req.body.gamertag
+        }
+    }).then(result=>{
+        console.log(result[0].dataValues.tiempoTotal);
+        Jugador.update({
+            tiempoTotal: result[0].dataValues.tiempoTotal + parseInt(req.body.tiempoTotal)
+        },{
+            where:{
+                gamertag:req.body.gamertag
+            }
+        }).then(()=>{
+            console.log("Jugador actualizado");
+            res.send("Jugador actualizado")
+        }).catch(error=>{
+            console.log(error);
+            res.send("Error en actualizar al Jugador")
+        })
+    }).catch(error=>console.log(error))
+};
