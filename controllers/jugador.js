@@ -83,3 +83,20 @@ exports.postEliminarJugador = (req, res)=>{
         res.send("Error en eliminar al Jugador")
     })
 };
+
+exports.getLogIn = (req, res)=>{
+    //Select jugadro where...
+    console.log(req.body);
+    Jugador.findAll({
+        where: {
+            gamertag:req.body.gamertag,
+            contrasena:req.body.contrasena
+        }
+    }).then(result=>{
+        console.log("Log in exitoso");
+        res.send(result[0].gamertag);
+    }).catch(error=>{
+        console.log(error);
+        res.send("Log in fallido, inténtelo de nuevo");
+    })
+};

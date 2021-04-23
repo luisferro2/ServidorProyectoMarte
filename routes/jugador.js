@@ -15,7 +15,7 @@ router.post('/eliminarJugador', jugadorController.postEliminarJugador);
 
 router.get('/registro', jugadorController.getMostrarFormulario);
 
-
+router.post('/LogIn', jugadorController.getLogIn);
 
 
 
