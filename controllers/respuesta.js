@@ -14,9 +14,10 @@ exports.getConfirmacion = (req, res) => {
 exports.postInsertarRespuesta = (req, res) => {
     console.log(req.body);
     Respuesta.create({
-        'idRespuesta': req.body.idRespuesta,
         'respuesta': req.body.respuesta,
-        'estado': req.body.estado
+        'estado': req.body.estado,
+        'JugadorGamertag': req.body.JugadorGamertag,
+        'PreguntumId': req.body.PreguntumId
     })
         .then(resultado => {
             console.log('Respuesta insertada.');

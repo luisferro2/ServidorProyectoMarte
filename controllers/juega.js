@@ -38,7 +38,9 @@ exports.postInsertarJuega = (req, res) => {
         'tiempoInicio': req.body.tiempoInicio,
         'tiempoFinal': req.body.tiempoFinal,
         'calificacion': req.body.calificacion,
-        'puntuacion': req.body.puntuacion
+        'puntuacion': req.body.puntuacion,
+        'JugadorGamertag': req.body.JugadorGamertag,
+        'NivelIdNivel': req.body.NivelIdNivel
     })
         .then(resultado => {
             console.log('Datos insertados.');
