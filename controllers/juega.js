@@ -32,21 +32,22 @@ exports.getSelectJuega = (req, res) => {
 };
 
 // Post para insertar datos desde Unity en la tabla Juega.
+//Formato fecha 2010-06-18 22:34:10.0000000 +00:00
 exports.postInsertarJuega = (req, res) => {
     console.log(req.body);
     Juega.create({
-        'tiempoInicio': req.body.tiempoInicio,
-        'tiempoFinal': req.body.tiempoFinal,
-        'calificacion': req.body.calificacion,
-        'puntuacion': req.body.puntuacion,
+        'tiempoInicio': (req.body.ano + "-" + req.body.mes + "-" + req.body.diaInicio + " " + req.body.horaInicio + ":" + req.body.minutoInicio + ":00.0000000 +00:00"),
+        'tiempoFinal': (req.body.ano + "-" + req.body.mes + "-" + req.body.diaFin + " " + req.body.horaFin + ":" + req.body.minutoFin + ":00.0000000 +00:00"),
+        'calificacion': parseInt(req.body.calificacion),
+        'puntuacion': parseFloat(req.body.puntuacion),
         'JugadorGamertag': req.body.JugadorGamertag,
-        'NivelIdNivel': req.body.NivelIdNivel
+        'NivelIdNivel': parseInt(req.body.NivelIdNivel)
     })
         .then(resultado => {
             console.log('Datos insertados.');
         })
         .catch(error => {
-            console.log('Error al insertar en Juega.');
+            console.log(error);
         })
     res.redirect('/juega/confirmacion');
 };
