@@ -54,7 +54,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
 //{force:true}
-sequelize.sync()
+sequelize.sync({force: true})
     .then(resultado => {
         console.log("Conexión exitosa de sequelize.")
         // Atender peticiones en el puerto 8080.
