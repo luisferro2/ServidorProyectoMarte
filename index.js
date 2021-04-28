@@ -27,7 +27,6 @@ const administradorRoutes = require('./routes/administrador');
 
 // Importar biblioteca para manejar rutas de archivos.
 const path = require('path');
-const Administrador = require('./models/administrador');
 
 // Crear el servidor.
 const app = express();

@@ -13,6 +13,6 @@ router.post('/eliminarAdministrador', administradorController.postEliminarAdmini
 
 router.post('/LogIn', administradorController.getLogIn);
 
-router.post('/LogOut', administradorController.postLogOut);
+router.get('/LogInAdministrador', administradorController.getMostrarLogIn);
 
 module.exports = router;

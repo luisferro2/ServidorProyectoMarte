@@ -3,7 +3,7 @@ const Sequelize = require('sequelize');
 const Administrador = (sequelize) => {
     sequelize.define('Administrador', {
         idAdministrador: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.STRING,
             primaryKey: true,
             allowNull: false
         },

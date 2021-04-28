@@ -73,34 +73,25 @@ exports.postEliminarAdministrador = (req, res)=>{
     })
 };
 
+exports.getMostrarLogIn = (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'views', 'LogInAdmin.html'));
+};
+
 exports.getLogIn = (req, res)=>{
     //Select administrador where...
     console.log(req.body);
     Administrador.findAll({
         where: {
-            idAdministrador:req.body.idAdministrador,
-            contrasena:req.body.contrasena
+            idAdministrador:req.body.gamertag,
+            contrasena:req.body.password
         }
     }).then(result=>{
         console.log("Log in exitoso");
         res.send(result[0].idAdministrador);
+        //res.redirect("Tableau");
     }).catch(error=>{
         console.log(error);
         res.send("Log in fallido, inténtelo de nuevo");
     })
 };
 
-exports.postLogOut = (req,res)=>{
-    console.log(req.body);
-    Administrador.findAll({
-        where: {
-            idAdministrador:req.body.idAdministrador
-        }
-    }).then(result=>{
-        console.log("Log out exitoso");
-        res.send(result[0].idAdministrador);
-    }).catch(error=>{
-        console.log(error);
-        res.send("Log out fallido, inténtelo de nuevo");
-    })
-};
