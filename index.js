@@ -22,10 +22,12 @@ const juegaRoutes = require('./routes/juega');
 const opcionRoutes = require('./routes/opcion');
 const percepcionRoutes = require('./routes/percepcion');
 const vocacionRoutes = require('./routes/vocacion');
+const administradorRoutes = require('./routes/administrador');
 
 
 // Importar biblioteca para manejar rutas de archivos.
 const path = require('path');
+const Administrador = require('./models/administrador');
 
 // Crear el servidor.
 const app = express();
@@ -45,6 +47,7 @@ app.use('/juega', juegaRoutes);
 app.use('/opcion', opcionRoutes);
 app.use('/percepcion', percepcionRoutes);
 app.use('/vocacion', vocacionRoutes);
+app.use('/administrador', administradorRoutes);
 
 // Middleware permite que el folder public sea público. 
 app.use(express.static(path.join(__dirname, 'public')));
