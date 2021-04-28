@@ -43,7 +43,7 @@ exports.postInsertarAdministrador = (req, res) => {
             })
         res.redirect('/administrador/confirmacion');
     }else{
-        res.send('Código de acceso denegado');
+        //res.send('Código de acceso denegado');
     }
 };
 
