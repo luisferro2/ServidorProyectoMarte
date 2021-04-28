@@ -124,3 +124,25 @@ exports.postLogOut = (req,res)=>{
         })
     }).catch(error=>console.log(error))
 };
+
+exports.getMostrarLogIn = (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'views', 'LogIn.html'));
+};
+
+exports.postLogInWeb = (req,res)=>{
+    //Select jugadro where...
+    console.log(req.body);
+    Jugador.findAll({
+        where: {
+            gamertag:req.body.gamertag,
+            contrasena:req.body.password
+        }
+    }).then(result=>{
+        console.log("Log in exitoso");
+        res.send(result[0].gamertag);
+        //res.redirect('/jugador/EstatusJugador');
+    }).catch(error=>{
+        console.log(error);
+        res.send("Log in fallido, inténtelo de nuevo");
+    })
+};

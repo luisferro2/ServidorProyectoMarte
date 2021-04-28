@@ -19,6 +19,10 @@ router.post('/LogIn', jugadorController.getLogIn);
 
 router.post('/LogOut', jugadorController.postLogOut);
 
+router.post('/LogInWeb', jugadorController.postLogInWeb);
+
+router.get('/LogInJugador', jugadorController.getMostrarLogIn);
+
 
 module.exports = router;
 
