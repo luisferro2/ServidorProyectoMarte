@@ -23,7 +23,7 @@ exports.postInsertarRespuesta = (req, res) => {
             console.log('Respuesta insertada.');
         })
         .catch(error => {
-            console.log('Error al insertar en Respuesta.');
+            console.log('Error al insertar en Respuesta.' + error);
         })
     res.redirect('/respuesta/confirmacion');
 };
