@@ -5,6 +5,10 @@ exports.getConfirmacion = (req, res) => {
     res.send('Confirmadísimo')
 };
 
+exports.getMostrarFormulario = (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'views', 'formularioAdmin.html'));
+};
+
 exports.getSelectAdministrador = (req, res) => {
     // SELECT * FROM Administrador
     Administrador.findAll()
@@ -26,17 +30,21 @@ exports.getSelectAdministrador = (req, res) => {
 
 exports.postInsertarAdministrador = (req, res) => {
     console.log(req.body);
-    Administrador.create({
-        'idAdministrador': req.body.idAdministrador,
-        'contrasena': req.body.contrasena,
-    })
-        .then(resultado => {
-            console.log('Datos insertados.');
+    if (req.body.code == '5678'){
+        Administrador.create({
+            'idAdministrador': req.body.gamertag,
+            'contrasena': req.body.password,
         })
-        .catch(error => {
-            console.log(error);
-        })
-    res.redirect('/administrador/confirmacion');
+            .then(resultado => {
+                console.log('Datos insertados.');
+            })
+            .catch(error => {
+                console.log(error);
+            })
+        res.redirect('/administrador/confirmacion');
+    }else{
+        res.send('Código de acceso denegado');
+    }
 };
 
 exports.postActualizarAdministrador = (req, res)=>{

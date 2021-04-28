@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- Hoja de estilos de bootsrap-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">        
+        <!-- Más caracteres y grosor de página adaptable-->
+        <meta charset = "UTF-8" content = "width=device-width">
+        <!-- Documento de js-->
+        <script src = "../public/js/funcionesJS.js"></script>
+        <!-- Documento de CSS-->
+        <link rel = "stylesheet" href = "../public/css/estilosCSS.css">
+        <!-- Título de la página -->
+        <title>Log In</title>
+    </head>
+    <body id = "page-wide">
+        <!-- El encabezado de la página -->
+        <div class = "container-fluid bg-success">
+            <h1 style = "text-align: center;">Log In</h1>
+        </div>
+        <!-- El formulario -->
+        <form action = "http://localhost:8080/administrador/insertarAdministrador" class = "form bg-light p-5" method="POST">
+            <!-- Primera fila del formulario 2 registros -->
+            <div class = "row">
+                <div class = "col-md-4">
+                    <label for = "gamertag" class = "form-label">Usuario</label>
+                    <input onclick = "IntroduceTexto('')" required type = "text" class = "form-control" id = "gamertag" name = "gamertag" placeholder = "Escriba su nombre de usuario">
+                </div>
+                <div class = "col-md-4">
+                    <label for = "password" class = "formn-label">Contraseña</label>
+                    <input required type = "password" class = "form-control" id = "password" name = "password" placeholder = "Escriba su contraseña">
+                </div>
+                <div class = "col-md-4">
+                    <label for = "code" class = "formn-label">Código de acceso</label>
+                    <input required type = "password" class = "form-control" id = "code" name = "code" placeholder = "Escriba su código de acceso">
+                </div>
+            </div>
+            <br><br><br>
+            <!-- Botones de confirmación y cancelación del llenado del formulario -->
+            <button onclick = "mensajeBorrar('alert1')" class="btn btn-outline-danger" type="reset">Borrar</button>
+            <div class = "alert alert-success alert-dismissible fade show " role = "alert" id = "alert1" style = "display: none">
+                <strong>Mensaje:</strong>Ha borrado los datos
+                <button type ="button" class ="close" data-dismiss="alert">&times</button>
+            </div>
+            <button class="btn btn-outline-primary" type="submit">Confirmar</button>
+        </form>
+        <!-- Necesario para bootstrap -->        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    </body>
+</html>

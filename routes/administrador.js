@@ -15,4 +15,6 @@ router.post('/LogIn', administradorController.getLogIn);
 
 router.get('/LogInAdministrador', administradorController.getMostrarLogIn);
 
+router.get('/registro', administradorController.getMostrarFormulario);
+
 module.exports = router;
