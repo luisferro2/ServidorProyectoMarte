@@ -17,7 +17,7 @@ exports.getSelectAdministrador = (req, res) => {
             registros.forEach(registro => {
                 data.push(registro);               
             });
-            res.render("tablero.html", {
+            res.render("Tablero.html", {
                 admin: data
             });// Incluir página de muestra de querys.
 
@@ -95,11 +95,9 @@ exports.getLogIn = (req, res)=>{
         }
     }).then(result=>{
         console.log("Log in exitoso");
-        res.send(result[0].idAdministrador);
-        //res.redirect("Tableau");
+        res.redirect("/jugador/verJugador");
     }).catch(error=>{
         console.log(error);
         res.send("Log in fallido, inténtelo de nuevo");
     })
 };
-
