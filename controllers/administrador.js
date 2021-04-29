@@ -94,8 +94,13 @@ exports.getLogIn = (req, res)=>{
             contrasena:req.body.password
         }
     }).then(result=>{
-        console.log("Log in exitoso");
-        res.redirect("/jugador/verJugador");
+        if (result[0] != undefined){
+            console.log("Log in exitoso");
+            res.redirect("/jugador/verJugador");
+        }
+        else{
+            res.send("Log in fallido, inténtelo de nuevo");
+        }
     }).catch(error=>{
         console.log(error);
         res.send("Log in fallido, inténtelo de nuevo");

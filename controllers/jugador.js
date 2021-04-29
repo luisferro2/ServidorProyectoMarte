@@ -93,8 +93,13 @@ exports.getLogIn = (req, res)=>{
             contrasena:req.body.contrasena
         }
     }).then(result=>{
-        console.log("Log in exitoso");
-        res.send(result[0].gamertag);
+        if (result[0] != undefined){
+            console.log("Log in exitoso");
+            res.send(result[0].gamertag);
+        }
+        else{
+            res.send("Log in fallido, inténtelo de nuevo");
+        }
     }).catch(error=>{
         console.log(error);
         res.send("Log in fallido, inténtelo de nuevo");
