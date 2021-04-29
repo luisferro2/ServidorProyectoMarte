@@ -25,6 +25,11 @@ html {
     -webkit-text-fill-color: transparent;
 }
 
+.background-c-1 {
+    transform: scale(1.2);
+    transition: transform 1.5s ease;
+}
+
 #stars {
     width: 1px;
     height: 1px;
