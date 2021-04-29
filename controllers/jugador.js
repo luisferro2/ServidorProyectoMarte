@@ -40,11 +40,11 @@ exports.postInsertarJugador = (req, res) => {
     })
         .then(resultado => {
             console.log('Jugador insertado.');
+            res.redirect('/jugador/LogInJugador');
         })
         .catch(error => {
             console.log('Error al insertar en Jugador.');
         })
-    res.redirect('/jugador/confirmacion');
 };
 
 exports.postActualizarJugador = (req, res)=>{

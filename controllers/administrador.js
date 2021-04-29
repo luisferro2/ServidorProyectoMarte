@@ -37,11 +37,11 @@ exports.postInsertarAdministrador = (req, res) => {
         })
             .then(resultado => {
                 console.log('Datos insertados.');
+                res.redirect('/administrador/LogInAdministrador');
             })
             .catch(error => {
                 console.log(error);
             })
-        res.redirect('/administrador/confirmacion');
     }else{
         //res.send('Código de acceso denegado');
     }
