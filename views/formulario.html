@@ -5,7 +5,7 @@
         <!-- Hoja de estilos de bootsrap-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">        
         <!-- Más caracteres y grosor de página adaptable-->
-        <meta charset = "UTF-8" content = "width=device-width">
+        <meta charset = "UTF-8" content = "width=device-width" lang="es-Es">
         <!-- Documento de js-->
         <script src = "../public/js/funcionesJS.js"></script>
         <!-- Documento de CSS-->
@@ -13,14 +13,82 @@
         <!-- Título de la página -->
         <title>Formulario de registro</title>
     </head>
-    <body id = "page-wide">
+    <body id = "page-wide" class="container bg-dark">
         <!-- El encabezado de la página -->
+<<<<<<< Updated upstream
         <div class = "container-fluid bg-success">
             <h1 style = "text-align: center;">Formulario de registro</h1>
             <a class="active" href="../ProyectoMarte">MENU</a>
+=======
+        <div class = "container-fluid bg-dark text-white">
+            <h1 style = "text-align: center;">Formulario de registro de Jugador</h1>
+>>>>>>> Stashed changes
         </div>
+        
+        <img src="../public/images/mars.jpg" style="width: 100%">
+        <br>
+        <br>
+        
+        <!-- información sobre las vocaciones para los jugadores -->
+        <!-- Vocacion Software y servicios de TIC-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="../public/images/programming.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Software y servicios de TIC</h5>
+                    <p class="card-text">El área de Software y Servicios TICs se encarga de proveer, diseñar, mejorar y mantener sistemas informáticos funcionales que ayuden a resolver un problema específico utilizando múltiples herramientas tanto de hardware como software.</p>
+                    <a href="https://tec.mx/es/computacion-y-tecnologias-de-informacion/ingeniero-en-tecnologias-computacionales" class="btn btn-primary">Ver una carrera</a>
+                    </div>
+                </div>
+            </div>
+        <!-- Vocacion Biotecnología y ciencias agropecuarias-->
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="../public/images/crops.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Biotecnología y ciencias agropecuarias</h5>
+                    <p class="card-text">Es un área de la ciencia que implica el uso de herramientas y técnicas científicas, que incluyen ingeniería genética, marcadores moleculares, diagnóstico molecular, vacunas y cultivo de tejidos, para modificar organismos vivos: plantas, animales y microorganismos.</p>
+                    <a href="https://tec.mx/es/bioingenieria-y-procesos-quimicos/ingeniero-en-alimentos" class="btn btn-primary">Ver una carrera</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Vocacion Ciencias fisicomatemáticas y de la tierra-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="../public/images/math.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Ciencias fisicomatemáticas y de la tierra</h5>
+                    <p class="card-text">En el área de Ciencias Fisicomatemáticas y de la Tierra se resuelven problemas de la vida cotidiana a través de las matemáticas y la física, desarrollar métodos y problemas matemáticos y entender cómo funciona nuestro planeta y el universo.</p>
+                    <a href="https://tec.mx/es/ciencias-aplicadas/ingeniero-en-ciencia-de-datos-y-matematicas" class="btn btn-primary">Ver una carrera</a>
+                    </div>
+                </div>
+            </div>
+        <!-- Vocacion Ingeniería industrial y mecánica-->
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="../public/images/gear.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Ingeniería industrial y mecánica</h5>
+                    <p class="card-text">La ingeniería industrial permite desarrollar la capacidad de resolución de problemas para hacer los procesos y sistemas lo más eficientes que se pueda. Se logra incrementar la productividad con muchas herramientas. Con la ingeniería mecánica se logra tener la habilidad de seleccionar los materiales adecuados y diseñar procesos de manufactura buscando el desarrollo sostenible.
+                    </p>
+                    <a href="https://tec.mx/es/innovacion-y-transformacion/ingeniero-industrial-y-de-sistemas" class="btn btn-primary">Ver una carrera</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- El formulario -->
+<<<<<<< Updated upstream
         <form action = "./insertarJugador" class = "form bg-light p-5" method="POST">
+=======
+        <form action = "http://localhost:8080/jugador/insertarJugador" class = "form p-5 text-white" method="POST">
+>>>>>>> Stashed changes
             <!-- Primera fila del formulario 2 registros -->
             <div class = "row">
                 <div class = "col-md-6">
@@ -51,7 +119,7 @@
 
             <!-- Cuarta fila del formulario 2 registros -->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label for="estado" class = "form-label">Estado</label>
                     <select required name="estado" class = "form-control" id = "estado">
                         <option disabled selected hidden value="">Seleccione su estado</option>
@@ -144,12 +212,14 @@
             </div>
             <br><br><br>
             <!-- Botones de confirmación y cancelación del llenado del formulario -->
-            <button onclick = "mensajeBorrar('alert1')" class="btn btn-outline-danger" type="reset">Borrar</button>
+            <div class="col-md-12 text-center">
+            <button onclick = "mensajeBorrar('alert1')" class="btn btn-danger" type="reset">Borrar</button>
             <div class = "alert alert-success alert-dismissible fade show " role = "alert" id = "alert1" style = "display: none">
                 <strong>Mensaje:</strong>Ha borrado los datos
                 <button type ="button" class ="close" data-dismiss="alert">&times</button>
             </div>
-            <button class="btn btn-outline-primary" type="submit">Enviar</button>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+            </div>
         </form>
         <!-- Necesario para bootstrap -->        
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
