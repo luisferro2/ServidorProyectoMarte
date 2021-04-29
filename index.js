@@ -55,6 +55,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
+app.get('/ProyectoMarte',(req,res)=>{
+    console.log(path.join(__dirname, 'views', 'Bienvenida.html'));
+    res.sendFile(path.join(__dirname, 'views', 'Bienvenida.html'));
+});
+
 //{force:true}
 sequelize.sync()
     .then(resultado => {

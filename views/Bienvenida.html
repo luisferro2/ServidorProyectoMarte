@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content = "ie-edge">
+        <title>Bienvenida</title>
+        
+        <link rel = "stylesheet" href = "/css/style.css">
+
+        <style>
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              background-color: #333;
+            }
+            
+            li {
+              float: left;
+            }
+            
+            li a {
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            
+            li a:hover:not(.active) {
+              background-color: #090a0f;
+            }
+            
+            .active {
+              background-color:slateblue;
+            }
+            </style>
+    </head>
+    <body>
+        <ul>
+            <!--Modificar href para que sea a la pagina que corresponda (./LogIn)-->
+            <li><a href="./Acerca-De.html">Acerca de</a></li>
+            <li style="float:right"><a class="active" href="./formulario.html">Registro jugador</a></li>
+            <li style="float:right"><a href="./formularioAdmin.html">Registro STEAM</a></li>
+            <li style="float:right"><a href="./LogIn.html">Inicio sesión jugador</a></li>
+            <li style="float:right"><a href="./LogInAdmin.html">Inicio sesión STEAM</a></li>
+            
+        </ul>
+
+        <section class="wrapper">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+            <div id="title">
+                <span>Bienvenido</span>
+                <br>
+                <span>Proyecto Marte</span>
+            </div>
+        </section>
+
+    </body>
+</html>
