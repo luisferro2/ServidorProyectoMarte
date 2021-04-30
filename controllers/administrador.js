@@ -96,7 +96,8 @@ exports.getLogIn = (req, res)=>{
     }).then(result=>{
         if (result[0] != undefined){
             console.log("Log in exitoso");
-            res.redirect("/jugador/verJugador");
+            res.redirect("https://public.tableau.com/profile/omar.sorchini#!/vizhome/DatosProyectoMarteServer/Estadsticasgenerales?publish=yes");
+            //res.redirect("/jugador/verJugador");
         }
         else{
             res.send("Log in fallido, inténtelo de nuevo");
