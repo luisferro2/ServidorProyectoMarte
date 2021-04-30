@@ -3,5 +3,5 @@ function mensajeBorrar(idInput){
 }
 
 function revisarCodigo(code){
-    if(code!='5678')alert('Código de acceso denegado')
+    if(code!='KzZyF#QzE$')alert('Código de acceso denegado')
 }
