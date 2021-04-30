@@ -49,9 +49,9 @@ exports.postInsertarJugador = (req, res) => {
 };
 
 exports.getDownload = (req,res)=>{
-    console.log(path.join(__dirname,'..','public','images','planet.png'));
-    res.download(path.join(__dirname,'..','public','images','planet.png'));
-    res.redirect('/ProyectoMarte');
+    //console.log(path.join(__dirname,'..','public','images','planet.png'));
+    res.download(path.join(__dirname,'..','public','resources','ProyectoMarte.zip'));
+    //res.redirect('/ProyectoMarte');
 }
 
 exports.postActualizarJugador = (req, res)=>{
