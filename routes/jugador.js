@@ -23,6 +23,8 @@ router.post('/LogInWeb', jugadorController.postLogInWeb);
 
 router.get('/LogInJugador', jugadorController.getMostrarLogIn);
 
+router.get('/descargarJuego', jugadorController.getDownload);
+
 
 module.exports = router;
 

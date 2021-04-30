@@ -40,12 +40,19 @@ exports.postInsertarJugador = (req, res) => {
     })
         .then(resultado => {
             console.log('Jugador insertado.');
-            res.redirect('/jugador/LogInJugador');
+            //res.redirect('/jugador/LogInJugador');
+            res.redirect('/jugador/descargarJuego');
         })
         .catch(error => {
             console.log('Error al insertar en Jugador.');
         })
 };
+
+exports.getDownload = (req,res)=>{
+    console.log(path.join(__dirname,'..','public','images','planet.png'));
+    res.download(path.join(__dirname,'..','public','images','planet.png'));
+    res.redirect('/ProyectoMarte');
+}
 
 exports.postActualizarJugador = (req, res)=>{
     //update from Jugador where id=..
