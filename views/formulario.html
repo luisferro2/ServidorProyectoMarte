@@ -10,14 +10,58 @@
         <script src = "../public/js/funcionesJS.js"></script>
         <!-- Documento de CSS-->
         <link rel = "stylesheet" href = "../public/css/estilosCSS.css">
+        <link rel = "stylesheet" href = "/css/style.css">
         <!-- Título de la página -->
         <title>Formulario de registro</title>
+        <style>
+            .formulario
+            {
+                color:mintcream;
+            }
+
+            .button {
+                position:absolute;
+                background-color: #1e334d;
+                border: none;
+                font-size: 28px;
+                color: #FFFFFF;
+                padding: 20px;
+                text-align: center;
+                transition-duration: 0.4s;
+                text-decoration: none;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            .button:after {
+                content: "";
+                background: #f1f1f1;
+                display: block;
+                position: absolute;
+                padding-top: 300%;
+                padding-left: 350%;
+                margin-left: -20px !important;
+                margin-top: -120%;
+                opacity: 0;
+                transition: all 0.8s
+            }
+
+            .button:active:after {
+                padding: 0;
+                margin: 0;
+                opacity: 1;
+                transition: 0s
+            }
+        </style>
     </head>
     <body id = "page-wide" class="container bg-dark">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
         <!-- El encabezado de la página -->
         <div class = "container-fluid bg-dark text-white">
-            <h1 style = "text-align: center;">Formulario de registro</h1>
-            <a class="active" href="../ProyectoMarte">MENU</a>
+            <h1 style = "text-align: center;" id="title">Formulario de registro</h1>
+            <a class="button" class="active"  href="../ProyectoMarte">MENU</a>
         </div>
         
         <img src="/images/mars.jpg" style="width: 100%">
@@ -28,7 +72,7 @@
         <!-- Vocacion Software y servicios de TIC-->
         <div class="row">
             <div class="col-md-6">
-                <div class="card">
+                <div class="card" style="background-color: #1b2735; color: steelblue;">
                     <img src="/images/programming.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">Software y servicios de TIC</h5>
@@ -39,7 +83,7 @@
             </div>
         <!-- Vocacion Biotecnología y ciencias agropecuarias-->
             <div class="col-md-6">
-                <div class="card">
+                <div class="card" style="background-color: #1b2735; color: steelblue;">
                     <img src="/images/crops.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">Biotecnología y ciencias agropecuarias</h5>
@@ -55,18 +99,20 @@
         <!-- Vocacion Ciencias fisicomatemáticas y de la tierra-->
         <div class="row">
             <div class="col-md-6">
-                <div class="card">
+                <div class="card" style="background-color: #1b2735; color: steelblue;">
                     <img src="/images/math.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">Ciencias fisicomatemáticas y de la tierra</h5>
                     <p class="card-text">En el área de Ciencias Fisicomatemáticas y de la Tierra se resuelven problemas de la vida cotidiana a través de las matemáticas y la física, desarrollar métodos y problemas matemáticos y entender cómo funciona nuestro planeta y el universo.</p>
+                    <br>
+                    <br>
                     <a href="https://tec.mx/es/ciencias-aplicadas/ingeniero-en-ciencia-de-datos-y-matematicas" class="btn btn-primary">Ver una carrera</a>
                     </div>
                 </div>
             </div>
         <!-- Vocacion Ingeniería industrial y mecánica-->
             <div class="col-md-6">
-                <div class="card">
+                <div class="card" style="background-color: #1b2735; color: steelblue;">
                     <img src="/images/gear.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">Ingeniería industrial y mecánica</h5>
@@ -77,139 +123,143 @@
                 </div>
             </div>
         </div>
-
+        <br>
+        <br>
+        
         <!-- El formulario -->
-        <form action = "./insertarJugador" class = "form bg-light p-5" method="POST">
-            <!-- Primera fila del formulario 2 registros -->
-            <div class = "row">
-                <div class = "col-md-6">
-                    <label for = "gamertag" class = "form-label">Gamertag</label>
-                    <input onclick = "IntroduceTexto('')" required type = "text" class = "form-control" id = "gamertag" name = "gamertag" placeholder = "Escriba su gamertag">
+        <form action = "./insertarJugador" class = "form bg-secondary p-5" method="POST">
+            <div class="formulario">
+                <!-- Primera fila del formulario 2 registros -->
+                <div class = "row">
+                    <div class = "col-md-6">
+                        <label for = "gamertag" class = "form-label">Gamertag</label>
+                        <input onclick = "IntroduceTexto('')" required type = "text" class = "form-control" id = "gamertag" name = "gamertag" placeholder = "Escriba su gamertag">
+                    </div>
+                    <div class = "col-md-6">
+                        <label for = "password" class = "formn-label">Password</label>
+                        <input required type = "password" class = "form-control" id = "password" name = "password" placeholder = "Escriba su contraseña">
+                    </div>
                 </div>
-                <div class = "col-md-6">
-                    <label for = "password" class = "formn-label">Password</label>
-                    <input required type = "password" class = "form-control" id = "password" name = "password" placeholder = "Escriba su contraseña">
+                
+                <!-- Segunda fila del formulario 2 registros -->
+                <div class = "row">
+                    <div class = "col-md-6">
+                        <label for = "fecha_nacimiento" class = "form-label">Fecha de nacimiento</label>
+                        <input required type = "date" class = "form-control" id = "fecha_nacimiento" name = "fecha_nacimiento" placeholder = "Escoga su fecha de nacimiento">
+                    </div>
+                    <div class = "col-md-6">
+                        <label for = "genero" class = "form-label">Género</label>
+                        <select required name="genero" class = "form-control" id = "genero">
+                            <option disable selected hidden value="">Seleccione el caracter de su género</option>
+                            <option value="M">M</option>
+                            <option value="F">F</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Segunda fila del formulario 2 registros -->
-            <div class = "row">
-                <div class = "col-md-6">
-                    <label for = "fecha_nacimiento" class = "form-label">Fecha de nacimiento</label>
-                    <input required type = "date" class = "form-control" id = "fecha_nacimiento" name = "fecha_nacimiento" placeholder = "Escoga su fecha de nacimiento">
-                </div>
-                <div class = "col-md-6">
-                    <label for = "genero" class = "form-label">Género</label>
-                    <select required name="genero" class = "form-control" id = "genero">
-                        <option disable selected hidden value="">Seleccione el caracter de su género</option>
-                        <option value="M">M</option>
-                        <option value="F">F</option>
-                    </select>
-                </div>
-            </div>
 
-            <!-- Cuarta fila del formulario 2 registros -->
-            <div class="row">
-                <div class="col-md-12">
-                    <label for="estado" class = "form-label">Estado</label>
-                    <select required name="estado" class = "form-control" id = "estado">
-                        <option disabled selected hidden value="">Seleccione su estado</option>
-                        <option value="Aguascalientes">Aguascalientes</option>
-                        <option value="Baja California">Baja California</option>
-                        <option value="Baja California Sur">Baja California Sur</option>
-                        <option value="Campeche">Campeche</option>
-                        <option value="Coahuila">Coahuila</option>
-                        <option value="Colima">Colima</option>
-                        <option value="Chiapas">Chiapas</option>
-                        <option value="Chihuahua">Chihuahua</option>
-                        <option value="Durango">Durango</option>
-                        <option value="Distrito Federal">Distrito Federal</option>
-                        <option value="Guanajuato">Guanajuato</option>
-                        <option value="Guerrero">Guerrero</option>
-                        <option value="Hidalgo">Hidalgo</option>
-                        <option value="Jalisco">Jalisco</option>
-                        <option value="Estado de México">Estado de México</option>
-                        <option value="Michoacán">Michoacán</option>
-                        <option value="Morelos">Morelos</option>
-                        <option value="Nayarit">Nayarit</option>
-                        <option value="Nuevo León">Nuevo León</option>
-                        <option value="Oaxaca">Oaxaca</option>
-                        <option value="Puebla">Puebla</option>
-                        <option value="Querétaro">Querétaro</option>
-                        <option value="Quintana Roo">Quintana Roo</option>
-                        <option value="San Luis Potosí">San Luis Potosí</option>
-                        <option value="Sinaloa">Sinaloa</option>
-                        <option value="Sonora">Sonora</option>
-                        <option value="Tabasco">Tabasco</option>
-                        <option value="Tamaulipas">Tamaulipas</option>
-                        <option value="Tlaxcala">Tlaxcala</option>
-                        <option value="Veracruz">Veracruz</option>
-                        <option value="Yucatán">Yucatán</option>
-                        <option value="Zacatecas">Zacatecas</option>
-                    </select>
+                <!-- Cuarta fila del formulario 2 registros -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="estado" class = "form-label">Estado</label>
+                        <select required name="estado" class = "form-control" id = "estado">
+                            <option disabled selected hidden value="">Seleccione su estado</option>
+                            <option value="Aguascalientes">Aguascalientes</option>
+                            <option value="Baja California">Baja California</option>
+                            <option value="Baja California Sur">Baja California Sur</option>
+                            <option value="Campeche">Campeche</option>
+                            <option value="Coahuila">Coahuila</option>
+                            <option value="Colima">Colima</option>
+                            <option value="Chiapas">Chiapas</option>
+                            <option value="Chihuahua">Chihuahua</option>
+                            <option value="Durango">Durango</option>
+                            <option value="Distrito Federal">Distrito Federal</option>
+                            <option value="Guanajuato">Guanajuato</option>
+                            <option value="Guerrero">Guerrero</option>
+                            <option value="Hidalgo">Hidalgo</option>
+                            <option value="Jalisco">Jalisco</option>
+                            <option value="Estado de México">Estado de México</option>
+                            <option value="Michoacán">Michoacán</option>
+                            <option value="Morelos">Morelos</option>
+                            <option value="Nayarit">Nayarit</option>
+                            <option value="Nuevo León">Nuevo León</option>
+                            <option value="Oaxaca">Oaxaca</option>
+                            <option value="Puebla">Puebla</option>
+                            <option value="Querétaro">Querétaro</option>
+                            <option value="Quintana Roo">Quintana Roo</option>
+                            <option value="San Luis Potosí">San Luis Potosí</option>
+                            <option value="Sinaloa">Sinaloa</option>
+                            <option value="Sonora">Sonora</option>
+                            <option value="Tabasco">Tabasco</option>
+                            <option value="Tamaulipas">Tamaulipas</option>
+                            <option value="Tlaxcala">Tlaxcala</option>
+                            <option value="Veracruz">Veracruz</option>
+                            <option value="Yucatán">Yucatán</option>
+                            <option value="Zacatecas">Zacatecas</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Cuarta fila del formulario percepciones 1 y 2 -->
-            <div class = "row">
-                <div class = "col-md-6">
-                    <label for = "percepcion1" class = "form-label">Del 1 al 5, ¿Cuánto le gusta la vocación de Software y servicios de TIC?</label>
-                    <select required name = "percepcion1" class = "form-control" id = "percepcion1">
-                        <option disabled selected hidden value = "">Seleccione del 1 al 5</option>
-                        <option value = "1">1</option>
-                        <option value = "2">2</option>
-                        <option value = "3">3</option>
-                        <option value = "4">4</option>
-                        <option value = "5">5</option>
-                    </select>
+                <!-- Cuarta fila del formulario percepciones 1 y 2 -->
+                <div class = "row">
+                    <div class = "col-md-6">
+                        <label for = "percepcion1" class = "form-label">Del 1 al 5, ¿Cuánto le gusta la vocación de Software y servicios de TIC?</label>
+                        <select required name = "percepcion1" class = "form-control" id = "percepcion1">
+                            <option disabled selected hidden value = "">Seleccione del 1 al 5</option>
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "4">4</option>
+                            <option value = "5">5</option>
+                        </select>
+                    </div>
+                    <div class = "col-md-6">
+                        <label for = "percepcion2" class = "form-label">Del 1 al 5, ¿Cuánto le gusta la vocación de Biotecnología y ciencias agropecuarias?</label>
+                        <select required name = "percepcion2" class = "form-control" id = "percepcion2">
+                            <option disabled selected hidden value = "">Seleccione del 1 al 5</option>
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "4">4</option>
+                            <option value = "5">5</option>
+                        </select>
+                    </div>
                 </div>
-                <div class = "col-md-6">
-                    <label for = "percepcion2" class = "form-label">Del 1 al 5, ¿Cuánto le gusta la vocación de Biotecnología y ciencias agropecuarias?</label>
-                    <select required name = "percepcion2" class = "form-control" id = "percepcion2">
-                        <option disabled selected hidden value = "">Seleccione del 1 al 5</option>
-                        <option value = "1">1</option>
-                        <option value = "2">2</option>
-                        <option value = "3">3</option>
-                        <option value = "4">4</option>
-                        <option value = "5">5</option>
-                    </select>
-                </div>
-            </div>
 
-            <!-- Quinta fila del formulario percepciones 3 y 4 -->
-            <div class = "row">
-                <div class = "col-md-6">
-                    <label for = "percepcion3" class = "form-label">Del 1 al 5, ¿Cuánto le gusta la vocación de Ciencias fisicomatemáticas y de la tierra?</label>
-                    <select required name = "percepcion3" class = "form-control" id = "percepcion3">
-                        <option disabled selected hidden value = "">Seleccione del 1 al 5</option>
-                        <option value = "1">1</option>
-                        <option value = "2">2</option>
-                        <option value = "3">3</option>
-                        <option value = "4">4</option>
-                        <option value = "5">5</option>
-                    </select>
+                <!-- Quinta fila del formulario percepciones 3 y 4 -->
+                <div class = "row">
+                    <div class = "col-md-6">
+                        <label for = "percepcion3" class = "form-label">Del 1 al 5, ¿Cuánto le gusta la vocación de Ciencias fisicomatemáticas y de la tierra?</label>
+                        <select required name = "percepcion3" class = "form-control" id = "percepcion3">
+                            <option disabled selected hidden value = "">Seleccione del 1 al 5</option>
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "4">4</option>
+                            <option value = "5">5</option>
+                        </select>
+                    </div>
+                    <div class = "col-md-6">
+                        <label for = "percepcion4" class = "form-label">Del 1 al 5, ¿Cuánto le gusta la vocación de Ingeniería industrial y de transporte?</label>
+                        <select required name = "percepcion4" class = "form-control" id = "percepcion4">
+                            <option disabled selected hidden value = "">Seleccione del 1 al 5</option>
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            <option value = "4">4</option>
+                            <option value = "5">5</option>
+                        </select>
+                    </div>
                 </div>
-                <div class = "col-md-6">
-                    <label for = "percepcion4" class = "form-label">Del 1 al 5, ¿Cuánto le gusta la vocación de Ingeniería industrial y de transporte?</label>
-                    <select required name = "percepcion4" class = "form-control" id = "percepcion4">
-                        <option disabled selected hidden value = "">Seleccione del 1 al 5</option>
-                        <option value = "1">1</option>
-                        <option value = "2">2</option>
-                        <option value = "3">3</option>
-                        <option value = "4">4</option>
-                        <option value = "5">5</option>
-                    </select>
+                <br><br><br>
+                <!-- Botones de confirmación y cancelación del llenado del formulario -->
+                <div class="col-md-12 text-center">
+                <button onclick = "mensajeBorrar('alert1')" class="btn btn-danger" type="reset">Borrar</button>
+                <div class = "alert alert-success alert-dismissible fade show " role = "alert" id = "alert1" style = "display: none">
+                    <strong>Mensaje:</strong>Ha borrado los datos
+                    <button type ="button" class ="close" data-dismiss="alert">&times</button>
                 </div>
-            </div>
-            <br><br><br>
-            <!-- Botones de confirmación y cancelación del llenado del formulario -->
-            <div class="col-md-12 text-center">
-            <button onclick = "mensajeBorrar('alert1')" class="btn btn-danger" type="reset">Borrar</button>
-            <div class = "alert alert-success alert-dismissible fade show " role = "alert" id = "alert1" style = "display: none">
-                <strong>Mensaje:</strong>Ha borrado los datos
-                <button type ="button" class ="close" data-dismiss="alert">&times</button>
-            </div>
-            <button class="btn btn-primary" type="submit">Enviar</button>
+                <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
             </div>
         </form>
         <!-- Necesario para bootstrap -->        
