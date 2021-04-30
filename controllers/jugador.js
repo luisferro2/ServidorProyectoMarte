@@ -150,9 +150,13 @@ exports.postLogInWeb = (req,res)=>{
             contrasena:req.body.password
         }
     }).then(result=>{
-        console.log("Log in exitoso");
-        res.send(result[0].gamertag);
-        //res.redirect('/jugador/EstatusJugador');
+        if (result[0] != undefined){
+            console.log("Log in exitoso");
+            res.download(path.join(__dirname,'..','public','resources','ProyectoMarte.zip'));
+        }
+        else{
+            res.send("Log in fallido, inténtelo de nuevo");
+        }
     }).catch(error=>{
         console.log(error);
         res.send("Log in fallido, inténtelo de nuevo");
