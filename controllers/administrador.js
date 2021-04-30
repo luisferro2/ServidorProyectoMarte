@@ -30,7 +30,7 @@ exports.getSelectAdministrador = (req, res) => {
 
 exports.postInsertarAdministrador = (req, res) => {
     console.log(req.body);
-    if (req.body.code == '5678'){
+    if (req.body.code == 'KzZyF#QzE$'){
         Administrador.create({
             'idAdministrador': req.body.gamertag,
             'contrasena': req.body.password,
